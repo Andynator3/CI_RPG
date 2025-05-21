@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Clone le dépôt depuis GitHub
-                git url: 'https://github.com/Andynator3/CI_RPG.git', branch: 'main', credentialsId: 'github-token'
+                git url: 'https://github.com/Andynator3/CI_RPG.git', branch: 'principal', credentialsId: 'github-token'
             }
         }
         stage('Install Python & pip') {
