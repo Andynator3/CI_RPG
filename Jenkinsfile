@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-               git url: 'https://github.com/Andynator3/CI_RPG.git', branch: 'main', credentialsId: 'jenkins-example-github'
-
+                git url: 'https://github.com/Andynator3/CI_RPG.git', branch: 'main', credentialsId: 'jenkins-example-github'
             }
         }
         stage('Install Python & pip') {
@@ -32,4 +31,3 @@ pipeline {
         }
     }
 }
-le-github'
