@@ -4,22 +4,19 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Clone le dépôt depuis GitHub
-                git url: 'https://github.com/Andynator3/CI_RPG.git', branch: 'principal', credentialsId: 'github-token'
+                git url: 'https://github.com/Andynator3/CI_RPG.git', branch: 'principal', credentialsId: 'jekins-exemple-github-pat'
             }
         }
         stage('Install Python & pip') {
             steps {
-                // Vérifie et installe Python/pip si besoin
                 sh '''
-                python3 --version || brew install python3
+                python3 --version || sudo apt-get install python3 -y
                 python3 -m pip install --upgrade pip
                 '''
             }
         }
         stage('Install dependencies') {
             steps {
-                // Installe les dépendances si requirements.txt existe
                 sh '''
                 if [ -f requirements.txt ]; then
                     pip3 install -r requirements.txt
@@ -29,7 +26,6 @@ pipeline {
         }
         stage('Run tests') {
             steps {
-                // Lance tous les tests unitaires Python
                 sh 'python3 -m unittest discover'
             }
         }
