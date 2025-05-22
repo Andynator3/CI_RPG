@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/Andynator3/CI_RPG.git', branch: 'principal', credentialsId: 'jekins-exemple-github-pat'
+                git url: 'https://github.com/Andynator3/CI_RPG.git', branch: 'principal', credentialsId: 'jekins-exemple-github'
             }
         }
         stage('Install Python & pip') {
@@ -31,3 +31,5 @@ pipeline {
         }
     }
 }
+
+le-github-pat'
